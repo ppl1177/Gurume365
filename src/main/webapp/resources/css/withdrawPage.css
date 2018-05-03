@@ -1,0 +1,384 @@
+@charset "UTF-8";
+
+body {
+   margin:0;
+   background-color: #E6E6E6;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position:fixed;
+  right:0;
+  bottom: 0;
+}
+
+.navbar a {
+
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #f1f1f1;
+  color: black;
+}
+
+.midLi a.active {
+  background-color: #DC143C;
+  color: white;
+}
+.mainSection{
+   padding-left: 100px;
+   padding-top: 30px;
+   float: left;
+   width: 300px;
+   height: 1000px;
+}
+.mainSection2{
+   padding-top: 80px;
+   padding-left: 30px;
+}
+.mainSection3{
+   padding-top: 20px;
+   float: right;
+   padding-right: 50px;
+}
+.img .innerImg{
+   width: 100%;
+   height: 420px;
+   z-index: 1;
+}
+.img .innerImg img{
+   width: 100%;
+   height: 100%;
+   z-index: 1;
+}
+.img .innerImg .overlay{
+  position:absolute;
+  z-index: 2;
+  width: 100%; height: 420px;
+  left: 0; top: 136px;
+  background-color: rgba(0,0,0, 0.4);
+  overflow-x: hidden;
+}
+.upperImg{
+   position: absolute;
+   width: 820px;
+   height: 420px;
+   z-index: 3;
+   top: 136px;
+}
+
+.upperImg .content{
+     position: absolute;                                                                  
+     color: white;
+     z-index: 3;
+     width: 800px;
+     left: 50px;
+     top: 30px;
+     border-bottom: 1px solid #F2F2F2;
+}
+.upperImg .content .titleTitle{
+   position: relative;
+   float: left;
+   font-size: 30px;
+   font-weight: bold;
+}
+.upperImg .content .titleRoot{
+   position: relative;
+   height: auto;
+   font-size:20px;
+   left: 20px;
+   top: 10px;
+}
+.upperImg .content .titleState{
+   position: absolute;
+   right: 300px;
+   bottom: 3px;
+}
+.upperImg .content2{
+   z-index: 5;
+   color: white;
+}
+
+.upperImg .content2 .titleContent{
+   position: relative;
+   float: left;
+   z-index: 6;
+   width: 800px;
+   height: 200px;
+   top: 100px;
+   left: 50px;
+}
+td{
+   padding-left: 30px;
+   font-size: 17px;
+}
+.titleContent .jump{
+   padding-top: 15px;
+}
+.upperImg .content3{
+   position:absolute;
+   z-index: 3;
+   color: white;
+   top: 300px;
+   width: 880px;
+   height: 120px;
+}
+.upperImg .content3 .titleRecentReviewTitle{
+   z-index: 3;
+   width: 120px;
+   height: 17px;
+   padding-left: 50px;
+   padding-bottom: 10px;
+   font-weight: bold;
+}
+.upperImg .content3 .titleRecentReview{
+   z-index: 3;
+   width: 100%;
+   height: 100%;
+}
+.upperImg .content3 .titleRecentReview .reviewImg{
+   position:absolute;
+   padding-top:10px;
+   width: 90px;
+   left: 50px;
+   height: auto;
+}
+.upperImg .content3 .titleRecentReview img{
+   width:70px;
+   height:70px;
+   border-radius: 100%;
+}
+.upperImg .content3 .titleRecentReview .reviewId{
+   position:absolute;
+   width: 160px;
+   height: auto;
+   left: 120px;
+   font-weight: bold;
+}
+.upperImg .content3 .titleRecentReview .reviewContent{
+   position:absolute;
+   width: 700px;
+   height: 100%;
+   left:120px;
+   top:50px;
+   font-size: 12px;
+}
+.slideImg{
+   position:absolute;
+   width: 400px;
+   height: 0px;
+   left: 960px;
+   top: 100px;
+   z-index: 7;
+}
+footer{
+   position:absolute;
+   background-color: black;
+   width: 100%;
+   height: 260px;
+   top: 1500px;
+}
+footer .innerFooter{
+   position:absolute;
+   color:white;
+   width: 1350px;
+   height: 220px;
+   left: 45px;
+   top: 30px;
+}
+
+footer .innerFooter .innerTitle span{
+   font-size: 40px;
+   font-weight: bold;
+}
+footer .innerFooter .innerContent span{
+   font-size: 20px;
+}
+
+a { 
+   text-decoration:none 
+}
+.midnav {
+    overflow: hidden;
+    width: 280px;
+    background-color: white;
+    text-align: center;
+    padding-left: 10px;
+}
+
+.midnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.midnav a:hover {
+  color: #9A2EFE;
+}
+
+/* Add a color to the active/current link */
+.midnav a.active {
+  color: #9A2EFE;
+}
+      #map {
+        height: 300px;
+        width: 300px;
+      }s
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 500px;
+        margin: 0;
+        padding: 0;
+      }
+.mainInfo{
+   position:absolute;
+     top:700px;
+   left:11%;
+   width:1200px;
+     height:auto;
+     margin:-80px 0 0 -90px;
+}
+      
+.mainInfo .left{
+   width: 50%;
+   height: 800px;
+   position: relative;
+   background-color: #E6E6E6;
+   float: left;
+}
+.mainInfo .middle{
+   width: 25%;
+   height: 800px;
+   position: relative;
+   left: 300px;
+   background-color: #E6E6E6;
+   float: left;
+}
+.mainInfo .right{
+   width: 25%;
+   height: 600px;
+   position: relative;
+   float: left;
+}
+
+.left .midUl{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    position: absolute;
+    float: left;
+    width: 170px;
+    height: auto;
+    overflow: auto;
+}
+.left .midLi a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.left .midLi a.active {
+    background-color: #DC143C;
+    color: white;
+}
+
+.left .midLi a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+.mainInfo .left .middleRight{
+   width: 730px;
+   margin-left: 175px;
+   height: 800px;
+   background-color: white;
+}
+
+.editerSusume{
+   position:relative;
+   width: 100%;
+   height: 700px;
+   
+}
+.editerSusume .innerSusume{
+   width: 220px;
+   height: 590px;
+   background-color: white;
+}
+.setButton{
+   padding-bottom: 20px;
+}
+
+.reviewBtn{
+   border: none; /* Remove borders */
+    color: white; /* Add a text color */
+    padding: 18px 60px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+}
+.innerSusume{
+   border-top: 2px solid #DC143C;
+}
+.susumeTitle p{
+   font-size: 17px;
+   font-weight: bold;
+   color: #DC143C;
+}
+.susumeTitle hr{
+   border: medium;
+}
+
+.reviewHr{
+   color: #F5F5F5;   
+}
+.middleRight .storeInfo{
+   position: relative;
+   width: 450px;
+   top: 20px;
+   left: 40px;
+   float: left;
+   text-align: left;
+   border-top: 1px solid #E6E6E6;
+   font-weight: bold;
+   padding-bottom: 30px;
+}
+.middleRight .storeInfo .storeInfoInner{
+   position: relative;
+   width:450px;
+   height:auto;
+   font-size:13px;
+   font-weight: normal;
+}
+
+.tableButton{
+   border: none; /* Remove borders */
+   color: white; /* Add a text color */
+   padding: 18px 60px; /* Add some padding */
+   cursor: pointer; /* Add a pointer cursor on mouse-over */
+}
+
+.tableButton2{
+   font-size:30px;
+      border: none; /* Remove borders */
+      color: white; /* Add a text color */
+      padding: 18px 60px; /* Add some padding */
+      cursor: pointer; /* Add a pointer cursor on mouse-over */
+}
+.tableButton2{background-color: #DC143C;} 
+.tableButton2:hover {background-color: #8B0000;}
+
+.tableButton {background-color: #DC143C;} 
+.tableButton:hover {background-color: #8B0000;}
+
+.reviewBtn {background-color: #DC143C;} 
+.reviewBtn:hover {background-color: #8B0000;}

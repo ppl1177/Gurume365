@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- 검사 URL -->
+	<!-- 페이지 인터셉터 -->
+	<http use-expressions="true" auto-config="true"
+		disable-url-rewriting="true">
+ 		<intercept-url pattern="/login/loginForm" access="permitAll" />
+		<intercept-url pattern="/join/joinInfoPage" access="hasRole('ROLE_LICENSEE')" />
+		<intercept-url pattern="/join/joinPermission" access="permitAll" />
+		<intercept-url pattern="/join/joinForm" access="permitAll" />
+		<intercept-url pattern="/join/insertUsers" access="permitAll" />
+		<intercept-url pattern="/join/joinComplement" access="permitAll" />
+		<intercept-url pattern="/join/**" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/floor/floor_pop" access="hasRole('ROLE_AUTH_USER')" />
+		<intercept-url pattern="/floor/loadFloor" access="hasRole('ROLE_AUTH_USER')" />
+		<intercept-url pattern="/floor/**" access="hasRole('ROLE_LICENSEE')" />
+		<intercept-url pattern="/reservation/**" access="hasRole('ROLE_AUTH_USER')" />
+		<intercept-url pattern="/resources/**" access="permitAll" />
+		<intercept-url pattern="/**" access="permitAll" />
+		
+		
+		
+ 		<!-- <intercept-url pattern="/home" access="permitAll" /> -->
+		<!-- <intercept-url pattern="/admin/**" access="hasRole('ROLE_SYSTEM')" /> -->
+		<csrf disabled="true" />
+		<form-login login-page="/login/loginForm"
+			default-target-url="/loginInfo" authentication-failure-url="/login/loginForm?error"
+			username-parameter="id" password-parameter="password" />
+		<logout logout-url="/logout" invalidate-session="true" logout-success-url="/" />
+
+	
+		<access-denied-handler error-page="/login/accessDenied" />
+	</http>
+	<beans:bean id="authenticationProvider"
+		class="com.security.gurume365.security.CustomAuthenticationProvider">
+		
+		</beans:bean>
+	<beans:bean id="CustomUserDetailsService"
+		class="com.security.gurume365.security.CustomUserDetailsService">
+	</beans:bean>
+	
+	<beans:bean id="userDetailsService"
+		class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+		<beans:property name="dataSource" ref="dataSource" />
+	</beans:bean>
+	
+	
+	<!-- provider -->
+	<authentication-manager alias="AuthenticationManager">
+		<authentication-provider ref="authenticationProvider">
+		</authentication-provider>
+	</authentication-manager>
+
+	
+</beans:beans>

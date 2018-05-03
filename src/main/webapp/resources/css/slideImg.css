@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+/* Prevents slides from flashing */
+#slides {
+	display:none;
+}
+.slide a{
+	color: white; 
+	text-decoration: none;
+	padding-right: 300px;
+}
+.slidesjs-pagination{
+	visibility:hidden; 
+}

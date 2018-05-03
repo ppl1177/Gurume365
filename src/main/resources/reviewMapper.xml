@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.security.gurume365.mapper.ReviewMapper">
+ <insert id="insertReview" parameterType="Review">
+		insert into reviews(
+			companyName
+			, reviewText
+			, starScore
+			, originalfile
+			, savedfile
+			, inputdate
+			, id
+			, shop_no
+			
+			
+		)values(
+			#{companyName}
+			,#{reviewText}
+			,#{starScore}
+			,#{originalfile}
+			,#{savedfile}
+			,#{inputdate}
+			,#{id}
+			,#{shopNo}
+			
+		)
+	</insert>
+  <select id="selectReviewFromDate" resultType="Review">
+  select 
+  	r.companyName
+  	, r.starScore
+  	, r.reviewText
+  	, r.inputdate
+  	, r.id
+  	, r.shop_no
+  	, r.reply_no
+  	, r.originalfile
+  	, r.savedfile
+  	, s.category
+  	from reviews r, store s
+  	where r.shop_no = s.shop_no
+  	order by r.reply_no desc
+  	limit 30
+  </select>
+  <select id="selectReviewBest" resultType="Review">
+  select 
+  	r.companyName
+  	, r.starScore
+  	, r.reviewText
+  	, r.inputdate
+  	, r.id
+  	, r.shop_no
+  	, r.reply_no
+  	, r.originalfile
+  	, r.savedfile
+  	, s.category
+  	from reviews r, store s
+  	where r.shop_no = s.shop_no and r.starScore = 5
+  	order by r.reply_no desc
+  	limit 3
+  </select>
+  
+    <select id="selectReviewFive" resultType="Review">
+  	select * from reviews order by reply_no desc limit 5;
+  </select>
+  
+  <resultMap type="HashMap" id="reviewMap">
+		<id javaType="int" property="replyNo" column="reply_no"></id>
+		<result javaType="java.lang.String" property="companyName" column="company_name"></result>
+		<collection property="reviewInfo" javaType="Review">
+			<id javaType="int" property="replyNo" column="reply_no"></id>
+			<result javaType="int" property="shopNo" column="shop_no"></result>
+			<result javaType="int" property="starScore" column="starScore"></result>
+			<result javaType="String" property="reviewText" column="reviewText"></result>
+			<result javaType="String" property="inputdate" column="inputdate"></result>
+		</collection>
+	</resultMap>
+	
+ 	<select id="getMyReview" parameterType="String" resultMap="reviewMap">
+ 		select r.reply_no, r.shop_no, r.starScore, r.reviewText, r.inputdate, s.company_name
+ 		from reviews r, store s
+ 		where r.shop_no = s.shop_no and r.id = #{id}
+ 	</select> 
+ 	
+<select id="recentReview" resultType="Review" parameterType="int">
+  select 
+  	*
+  	from reviews
+  	where
+  	shop_no = #{shopNo}
+  	order by reply_no desc
+  	limit 1
+  </select>
+  
+ <select id="companyReview" resultType="Review" parameterType="String">
+  select 
+  	*
+  	from reviews
+  	where
+  	companyName = #{companyName}
+  	limit 1
+  </select> 
+ </mapper>

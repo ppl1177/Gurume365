@@ -1,0 +1,269 @@
+@charset "UTF-8";
+
+
+   input::-webkit-outer-spin-button,
+   input::-webkit-inner-spin-button {
+       /* display: none; <- Crashes Chrome on hover */
+       -webkit-appearance: none;
+       margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+   }
+   
+   .userInfoArea {
+      background-color: #f2f2f2;
+      width: 100%;
+   }
+   
+   .userInfoDiv {
+      position:relative;
+      top: 50px;
+      padding:0px;
+      width: 100%;
+      height: 500px;
+      border-top: 2px solid;
+      border-bottom: 2px solid;
+   }
+   
+   .addBusinessDiv {
+      border-top: 1px solid #d0d0d0;
+      width: 100%;
+   }
+   
+   .id{
+      position:relative;
+      font-size: large;
+      font-weight:bold;
+      right: 35px;
+      top: 75px;
+   }
+   .idbox{
+      position:relative;
+      font-weight:bold;
+      width: 230px;
+      height: 25px;
+      bottom: 3px;
+      left: 50px;
+   }
+   
+   .password{
+      position:relative;
+      font-size: large;
+      font-weight:bold;
+      right: 35px;
+      padding-top: 5px;
+      top: 95px;
+   }
+   .pwbox{
+      position:relative;
+      font-weight:bold;
+      width: 230px;
+      height: 25px;
+      bottom: 3px;
+      left: 41px;
+   }
+   
+   .password2{
+      position:relative;
+      font-weight:bold;
+      font-size: large;
+      right: 36px;
+      padding-top: 5px;
+      top: 115px;
+   }
+   .pwbox2{
+      position:relative;
+      font-weight:bold;
+      width: 230px;
+      height: 25px;
+      bottom: 3px;
+      left: 20px;
+   }   
+   .name{
+      position:relative;
+      font-size: large;
+      font-weight:bold;
+      right: 35px;
+      padding-top: 5px;
+      top: 130px;
+   }
+   .namebox{
+      position:relative;
+      font-weight:bold;
+      width: 230px;
+      height: 25px;
+      bottom: 3px;
+      left: 59px;
+   }
+   
+   .birth{
+      position:relative;
+      font-size: large;
+      font-weight:bold;
+      right: 35px;
+      padding-top: 5px;
+      top: 145px;
+   }
+   .birthbox{
+      position:relative;
+      font-weight:bold;
+      width: 230px;
+      height: 25px;
+      bottom: 3px;
+      left: 41px;
+   }
+   
+   .phone{
+      position:relative;
+      font-weight:bold;
+      font-size: large;
+      right:35px;
+      padding-top: 5px;
+      top: 160px;
+   }
+   .phonebox{
+      position:relative;
+      font-weight:bold;
+      width: 230px;
+      height: 25px;
+      bottom: 3px;
+      left: 41px;
+   }
+   
+   .updateButton{
+      position:relative;
+      top: 200px;
+      right: 8px;
+   }
+   .cancelButton{
+      position:relative;
+      top: 200px;
+      left: 12px;
+   }
+   
+   
+   .companyNo{
+      position:relative;
+      left: 125px;
+   }
+   .companyName{
+      position:relative;
+      left: 157px;
+   }
+   .phoneNum{
+      position:relative;
+      left: 141px;
+   }
+   .phoneNumBox{
+      position:relative;
+      width: 189px;
+   }
+   .category{
+      position:relative;
+      left: 133px;
+   }
+   .workingTime{
+      position:relative;
+      left: 125px;
+   }
+   .timetext{
+      position:relative;
+      left: 10px;
+   }
+   .address{
+      position:relative;
+      left: 171px;
+   }
+   .addressBox{
+      width: 220px;
+   }
+   .address2{
+      position:relative;
+      left: 139px;
+   }
+   .addressBox2{
+      width: 220px;
+   }
+   .shopInfo{
+      position:relative;
+      left: 94px;
+   }
+   .infoBox{
+      position:relative;
+      right: 25px;
+      width: 380px;
+   }
+   .editBusinessBtn{
+      position:relative;
+      bottom: 30px;
+      left: 235px;
+   }
+   
+   .fulldiv{
+      position:relative;
+      
+      top: 50px;
+      width: 100%;      
+   }
+   .innerdiv{
+      position:relative;
+      align-content:center;
+      top: 5px;
+      width: 100%;
+      height: 500px;
+      border-top: 2px solid;
+      border-bottom: 2px solid;
+   }
+   
+   .title{
+      position:relative;
+      top: 25px;
+      left: 280px;
+   }
+   
+   .text{
+      position:relative;
+      align-content:center;
+      top: 105px;
+   }
+   
+   .submitButton{
+      position:relative;
+      top: 200px;
+      right: 35px;
+   }
+   
+   .withdrawcancel{
+      position:relative;
+      top: 200px;
+      left: 35px;
+   }
+   
+   .passworddiv{
+      position:relative;
+      top: 150px;
+      align-content:center;
+   }
+   
+   .withdrawPw{
+      position:relative;
+      align-content:center;
+   }
+   
+   .farewell{
+      position: relative;
+      align-content:center;
+      top: 240px;
+   }
+   
+   #businessInfoArea {
+      width: 600px;
+      margin-bottom: 1px;
+   }
+   
+   textarea {
+      resize: none;
+   }
+   
+   .modal {
+      min-width: 750px;
+   }
+   

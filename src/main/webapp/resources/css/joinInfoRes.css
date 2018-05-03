@@ -1,0 +1,237 @@
+@CHARSET "UTF-8";
+
+.userInfoArea{
+	position:absolute;
+	width: 1500px; /* 200늘림 */
+	height:	970px;
+	left: 75px;
+}
+.userInfoArea .newInfoDiv{
+	position:absolute;
+	left:60px;
+	width: 25%;
+	height: 100%;
+}
+.userInfoArea .noshowInfoArea{
+	position:absolute;
+	left:500px;
+	width: 25%;
+	height: 100%;
+}
+.userInfoArea .visitInfoArea{
+	position:absolute;
+	left: 940px;
+	width: 25%;
+	height: 100%;
+}
+
+.userInfoArea .newInfoDiv .plusTitle{
+	font-weight: bold;
+	font-size: 22px;
+	padding-top:10px;
+	padding-bottom: 10px;
+	background-color: white;
+	text-align: center;
+	border-bottom: 2px solid #DC143C;
+}
+.userInfoArea .noshowInfoArea .plusTitle{
+	font-weight: bold;
+	font-size: 22px;
+	padding-top:10px;
+	padding-bottom: 10px;
+	background-color: white;
+	text-align: center;
+	border-bottom: 2px solid #DC143C;
+}
+.userInfoArea .visitInfoArea .plusTitle{
+	font-weight: bold;
+	font-size: 22px;
+	padding-top:10px;
+	padding-bottom: 10px;
+	background-color: white;
+	text-align: center;
+	border-bottom: 2px solid #DC143C;
+}
+.userInfoArea .infoTab .storeInfoTab, .userInfoArea .infoTab .resInfoTab{
+	padding-top:10px;
+	font-size: 13px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.userInfoArea .addBusinessDiv .businessNum{
+	padding-top:10px;
+	font-size: 13px;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+.userInfoArea .addBusinessDiv .businessNumInner{
+	width: 50px;
+}
+.userInfoArea .addBusinessDiv .businessName{
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.userInfoArea .addBusinessDiv .businessPhone{
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.userInfoArea .addBusinessDiv .businessClass{
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.userInfoArea .addBusinessDiv .businessHoliday{
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.userInfoArea .addBusinessDiv .businessTime{
+	font-size: 13px;
+	font-weight: bold;
+}
+.userInfoArea .addBusinessDiv .address1{
+	font-size: 13px;
+	font-weight: bold;
+}
+.userInfoArea .addBusinessDiv .address2{
+	font-size: 13px;
+	font-weight: bold;
+}
+.userInfoArea .addBusinessDiv .storeInfo{
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.businessInfoTab{
+	width: 100%;
+	height: 920px;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.editBusinessBtn{
+	border: none; /* Remove borders */
+    color: white; /* Add a text color */
+    padding: 18px 110px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+}
+.addressPopup{
+	border: none; /* Remove borders */
+    color: white; /* Add a text color */
+    padding: 6px 20px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+}
+.timeSelectClass{
+	width: 80px;
+}
+
+#address1{
+	width: 275px;
+}
+#address2{
+	width: 174px;
+}
+
+.leftCover{
+	position:absolute;
+	background-color: black;
+	opacity: 0.8;
+	width: 100%;
+	height: 100%;
+}
+.leftCover p{
+	position: absolute;
+	top:300px;
+	font-size: 22px;
+	left: 30px;
+}
+.rightCover{
+	position:absolute;
+	background-color: black;
+	opacity: 0.8;
+	width: 100%;
+	height: 100%;
+}
+.rightCover p{
+	position: absolute;
+	top:300px;
+	font-size: 22px;
+	left: 100px;
+}
+.userInfoArea .resDiv .resIdDiv{
+	width: 26%;
+    height: 26%;
+    text-align: center;
+    border: 1px solid red;
+    position: absolute;
+    margin: 2%;
+}
+.userInfoArea .resDiv .redDateDiv{
+	width: 66%;
+    height: 26%;
+    border: 1px solid;
+    float: right;
+    margin: 2%;
+}
+.userInfoArea .resDiv .resIdDiv .resIdSpan{
+	font-size: 7px;
+}
+.userInfoArea .resDiv .resCommentDiv .resCommentSpan{
+	margin: 10px;
+}
+.userInfoArea .resDiv .resCommentDiv{
+    width: 96%;
+    height: 60%;
+    float: right;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    border: 1px solid red;
+}
+.userInfoArea .resDiv{
+	position: relative;
+    height: 200px;
+    border: 1px solid red;
+    margin-top: 15px;
+}
+.userInfoArea .resDiv .resCommentDiv .resSetNoshow{
+    float: right;
+    margin: 2px;
+    width: 40px;
+    height: 20px;
+    border: 1px solid red;
+    font-size: 9px;
+    text-align: center;
+    color: red;
+}
+.userInfoArea .resDiv .resCommentDiv .resSetVisit{
+	float: right;
+    margin: 2px;
+    width: 40px;
+    height: 20px;
+    border: 1px solid;
+    font-size: 9px;
+    text-align: center;
+}
+.userInfoArea .resDiv .resCommentDiv .resSetDiv .resSetNoshow:hover{
+	opacity: 0.5; color: #ff8080;
+}
+.userInfoArea .resDiv .resCommentDiv .resSetDiv .resSetVisit:hover{
+	opacity: 0.5; color: #ff8080;
+}
+.userInfoArea .resDiv .resCommentDiv .resSetDiv{
+    height: 30px;
+    width: 100px;
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+}
+.leftCover:hover{opacity: 0.95; color: white;}
+.rightCover:hover{opacity: 0.95; color: white;}
+.addressPopup {background-color: #DC143C;} 
+.addressPopup:hover {background-color: #8B0000;}
+
+.editBusinessBtn {background-color: #DC143C;} 
+.editBusinessBtn:hover {background-color: #8B0000;}

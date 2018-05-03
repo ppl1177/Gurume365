@@ -1,0 +1,93 @@
+body{
+	background-color: white;
+}
+.topnav {
+    background-color: #DC143C;
+    overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #8B0000;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #8B0000;
+  color: white;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+}
+
+.headerTop .topSerch{
+	position: absolute;
+	left: 300px;
+	top: 30px;
+}
+.headerTop .topSerch select{
+	width: 220px;
+	height: 40px;
+    font-size: 18px;
+    color: #DC143C;
+    border: 1px solid #DC143C;
+    border-radius: 3px;
+    -webkit-appearance: none; 
+   -moz-appearance: none;    
+   appearance: none;
+}
+select::-ms-expand {
+   display: none;            
+}
+.headerTop .topSerch .select3{
+	position:absolute;
+	width: 220px;
+	height: 36px;
+    font-size: 18px;
+    color: #DC143C;
+    left:450px;
+    top:0px;
+    border: 1px solid #DC143C;
+    border-radius: 3px;
+    -webkit-appearance: none; 
+   -moz-appearance: none;    
+   appearance: none;
+}
+.headerTop .headerTopRight{
+	position: absolute;
+	left: 1200px;
+	top: 40px;
+	color: red;
+}
+.headerTop .topSerch .serchBtn{
+	position:absolute;
+	border: none;
+    color: white;
+	left:680px;
+	top:0px;
+	padding-top:10.7px;
+	padding-bottom:10.7px;
+	width: 70px;
+	cursor: pointer;
+	border-radius: 10%;
+}
+.serchBtn {background-color: #DC143C;} 
+.serchBtn:hover {background-color: #8B0000;}
+.headerTop{
+	background-color: white;
+}
+.headerTopRight a{
+	color:black;
+	padding-right: 10px;
+	text-decoration:none;
+}

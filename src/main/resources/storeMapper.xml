@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.security.gurume365.mapper.StoreMapper">
+
+   <insert id="insertStore" parameterType="Store">
+      insert into store(
+         id
+         ,company_name
+         ,company_no
+         ,address1
+         ,address2
+         ,phone
+         ,category
+         ,time_of_open
+         ,shop_info
+         ,holiday
+      )values(
+         #{id}
+         ,#{companyName}
+         ,#{companyNo}
+         ,#{address1}
+         ,#{address2}
+         ,#{phone}
+         ,#{category}
+         ,#{timeOfOpen}
+         ,#{shopInfo}
+         ,#{holiday}
+      )   
+   </insert>
+	
+	<select id="selectStore" parameterType="int" resultType="Store">
+		select 
+			*
+		from 
+			store
+		where
+			shop_no = #{shopNo}
+	</select>
+	<select id="selectStoreFromCname" parameterType="String" resultType="Store">
+	select id
+	, company_name
+	, company_no
+	, phone
+	, shop_no
+	, category
+	, time_of_open
+	, shop_info
+	from store
+	where company_name like CONCAT('%',#{companyName},'%')
+	limit 5
+	</select>
+	<select id="selectShopNo" parameterType="String" resultType="int">
+	select shop_no
+	from store where company_name = #{companyName}
+	</select>
+	
+	<select id="loadMyStore" parameterType="string" resultType="Store">
+		select * from store where id=#{id}
+		order by shop_no asc
+	</select>
+
+	<select id="storeList" resultType="Store">
+		select 
+			*
+		from 
+			store	 
+	</select>
+	
+	<select id="gradeList" resultType="Store">
+		select 
+			company_name
+			,address1
+			,category
+			,grade
+			,hits
+			,shop_info
+		from 
+			store
+	</select>
+	
+	<select id="hitsList" resultType="Store">
+		select 
+			company_name
+			,address1
+			,category
+			,grade
+			,hits
+			,shop_info
+		from 
+			store
+	</select>
+	
+	<select id="resList" resultType="Store">
+		select 
+			company_name
+			,address1
+			,category
+			,grade
+			,hits
+			,shop_info
+		from 
+			store
+	</select>
+	
+	<select id="getCategories" resultType="String">
+		select
+			category from categories;
+	</select>
+	
+	<delete id="deleteStore" parameterType="Store">
+		delete from store
+		where id = #{id} and shop_no = #{shopNo}
+	</delete>
+	
+	<select id="getHits" parameterType="int" resultType="int">
+		select hits from store
+		where shop_no = #{shopNo}
+	</select>
+	
+	<select id="getCompanyNo" resultType="String">
+		select company_no from store
+		where shop_no = #{shopNo}
+	</select>
+	
+	<update id="editSetStore" parameterType="Store">
+		update store set
+			company_name = #{companyName}
+			,address1 = #{address1}
+			,address2 = #{address2}
+			,phone = #{phone}
+			,category = #{category}
+			,time_of_open = #{timeOfOpen}
+			,shop_info = #{shopInfo}
+			,holiday = #{holiday}
+			,grade = #{grade}
+			,budjet = #{budjet}
+			,comment = #{comment}
+			,originalfile = #{originalfile}
+			,savedfile = #{savedfile}
+		where
+			id = #{id} and shop_no = #{shopNo}
+	</update>
+	
+	<update id="upHitsStore" parameterType="int">
+		update
+			store
+		set
+			hits = hits+1
+		where
+			shop_no = #{shopNo}
+	</update>
+	
+	<select id="searchList" parameterType="map" resultType="Store">
+		select
+			*
+		from
+			store
+		where
+			address1 like '%' || #{address} || '%'
+		and
+			category like '%' || #{category} || '%'
+		and 
+			company_name '%' || #{search} || '%'
+		order by
+				shop_no
+	</select>
+		<select id="noShowNum" resultType="int">
+		select
+			count(*)
+		from
+			store,reservations
+		where
+			store.shop_no = reservations.shop_no
+			and 
+            reservations.situation = 2
+	</select>
+	
+	<!-- 게시판 글 불러오기 -->
+	<select id="selectAllnoShow" resultType="Store">
+		select
+			store.company_name,
+            store.budjet,
+            store.company_no,
+            store.originalfile,
+            store.savedfile
+		from
+			store, reservations
+		where
+			store.shop_no = reservations.shop_no
+			and 
+            reservations.situation = 2
+			order by store.shop_no desc;
+	</select>
+	<select id="selectAllnoShow2" resultType="Reservations">
+		select
+			reservations.seq_res
+		from
+			store, reservations
+		where
+			store.shop_no = reservations.shop_no
+			and 
+            reservations.situation = 2
+			order by store.shop_no desc;
+	</select>	
+</mapper>

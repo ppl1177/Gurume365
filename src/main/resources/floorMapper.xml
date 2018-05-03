@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 플로어 관련 SQL -->
+<mapper namespace="com.security.gurume365.mapper.FloorMapper">
+
+	<select id="loadFloor" resultType="Floor">
+		select *
+		from floor_layout where floor_no = #{floor_no} and shop_no = #{shop_no}
+	</select>
+	
+	<select id="loadTables" resultType="Tables">
+		select *
+		from floor_tables where floor_no = #{floor_no} and shop_no = #{shop_no}
+		order by table_no asc
+	</select>
+	
+	<insert id="saveFloorTables" parameterType="Tables">
+		insert into floor_tables(
+			shop_no,
+			floor_no,
+			table_no,
+			person_min,
+			person_max,
+			table_shape,
+			table_length,
+			table_width,
+			pos_X,
+			pos_Y,
+			degree,
+			currentsit
+		) values(
+			#{shopNo},
+			#{floorNo},
+			#{tableNo},
+			#{personMin},
+			#{personMax},
+			#{tableShape},
+			#{tableLength},
+			#{tableWidth},
+			#{posX},
+			#{posY},
+			#{degree},
+			#{currentsit}
+		)
+	
+	</insert>
+	
+	<delete id="deleteAllTables">
+		delete from floor_tables where
+		floor_no = #{floor_no} and shop_no = #{shop_no} and
+		shop_no IN(select shop_no from store where id = #{id})
+	</delete>
+	
+	
+	
+</mapper>

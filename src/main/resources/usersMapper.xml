@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 회원정보 처리 SQL -->
+<mapper namespace="com.security.gurume365.mapper.UsersMapper">
+	<insert id="insertUsers" parameterType="Users">
+		insert into Users(
+			id
+			,pw
+			,name
+			,date_of_birth
+			,phone
+			,division
+			,permitToken
+		)values(
+			#{id}
+			,#{pw}
+			,#{name}
+			,#{dateOfBirth}
+			,#{phone}
+			,#{division}
+			,#{permitToken}
+		)
+	</insert>
+
+	<select id="selectUsers" parameterType="String" resultType="Users">
+		select * from Users where id = #{id}
+	</select>
+	
+	<update id="permitUsers">
+		update Users
+			set
+		permit = "Y"
+			where
+		id = #{id} and permitToken = #{token}
+		
+	</update>
+	
+	<update id="updateUsers" parameterType="Users">
+		update Users
+			set
+		pw = #{pw},
+		phone = #{phone}
+		date_of_birth = #{dateOfBirth}
+			where
+		id = #{id}	
+	</update>
+	<update id="restrictUsers" parameterType="Users">
+		update Users
+			set
+		enabled=0
+			where
+		id=#{id}		
+	</update>
+</mapper>

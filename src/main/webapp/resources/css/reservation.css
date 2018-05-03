@@ -1,0 +1,85 @@
+@CHARSET "UTF-8";
+<style>
+@import url(https://fonts.googleapis.com/css?family=Karla);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300);
+
+.asdf{
+  font-size:40px;
+  color:#888;
+  font-family:'Karla';
+  margin:0 auto;
+  text-align:center;
+}
+input{
+  font-family:'Ubuntu';
+  font-weight:300;
+  border:0;
+  border-bottom:1px solid #ff5407;
+  width:100%;
+  height:36px;
+  font-size:26px;
+}
+#datetimepicker::-webkit-input-placeholder{
+	font-size: 15px;
+}
+input:focus{
+  outline:none;
+  box-shadow:none;
+  background:#ffeae2;
+}
+
+button{
+  border:0;
+  background:transparent;
+  padding:5px;
+  margin-top:50px;
+  position:relative;
+  outline:0;
+}
+.buttonafter:after{
+content:'';
+display:block;
+position:absolute;
+top:8px;
+left:100%; /*should be set to 100% */
+width:0;
+height:0;
+border-color: transparent transparent transparent #14a03d; /*border color should be same as div div background color*/
+border-style: solid;
+border-width: 5px;
+
+}
+#joinForm_division{
+	margin-bottom: 30px;
+}
+#joinForm_button_join{
+	width: 100px;
+  background:#a0a0a0;
+  color:#fff;
+  float:right;
+}
+#joinForm_button_cancle{
+	width: 100px;
+  background:#a0a0a0;
+  color:#fff;
+  float:left;
+}
+
+ul, li { list-style: none; }
+#datetimepicker{
+	width: 250px;
+	margin-right: 30px;	
+}
+.container { margin: 10px auto; }
+.pBtn,.mBtn{
+	width: 30px;
+}
+#person{
+	width: 30px;
+	text-align: center;
+}
+.warning{
+	color: red;
+	margin:30px auto;
+}
+</style>

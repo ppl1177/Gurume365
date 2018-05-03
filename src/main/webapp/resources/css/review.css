@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+
+.review_title{padding-left: 20px; padding-top:30px; }
+.review_text{padding-left: 30px;}
+#content{position:relative;width:730px;}
+#content_wrap{position:relative; width:970px;margin:20px auto 150px;}

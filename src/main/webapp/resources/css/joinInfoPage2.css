@@ -1,0 +1,177 @@
+.userInfoArea{
+   position:absolute;
+   width: 1300px;
+   height:   970px;
+   left: 75px;
+}
+.userInfoArea .addBusinessDiv{
+   position:absolute;
+   left:60px;
+   width: 35%;
+   height: 100%;
+}
+.userInfoArea .businessInfoArea{
+   position:absolute;
+   left: 620px;
+   width: 45%;
+   height: 100%;
+}
+.userInfoArea .addBusinessDiv .plusTitle{
+   font-weight: bold;
+   font-size: 22px;
+   padding-top:10px;
+   padding-bottom: 10px;
+   background-color: white;
+   text-align: center;
+   border-bottom: 2px solid #DC143C;
+}
+.userInfoArea .businessInfoArea .plusTitle{
+   font-weight: bold;
+   font-size: 22px;
+   padding-top:10px;
+   padding-bottom: 10px;
+   background-color: white;
+   text-align: center;
+   border-bottom: 2px solid #DC143C;
+}
+.userInfoArea .addBusinessDiv .businessNum{
+   /* padding-top:10px; */
+   font-size: 13px;
+   font-weight: bold;
+   /* padding-bottom: 10px; */
+}
+.userInfoArea .addBusinessDiv .businessNumInner{
+   width: 50px;
+}
+.userInfoArea .addBusinessDiv .businessName{
+   font-size: 13px;
+   font-weight: bold;
+}
+
+.userInfoArea .addBusinessDiv .businessPhone{
+   font-size: 13px;
+   font-weight: bold;
+}
+
+.userInfoArea .addBusinessDiv .businessClass{
+   font-size: 13px;
+   font-weight: bold;
+}
+
+.userInfoArea .addBusinessDiv .businessHoliday{
+   font-size: 13px;
+   font-weight: bold;
+}
+
+.userInfoArea .addBusinessDiv .businessTime{
+   font-size: 13px;
+   font-weight: bold;
+}
+.userInfoArea .addBusinessDiv .address1{
+   font-size: 13px;
+   font-weight: bold;
+}
+.userInfoArea .addBusinessDiv .address2{
+   font-size: 13px;
+   font-weight: bold;
+}
+.userInfoArea .addBusinessDiv .storeInfo{
+   font-size: 13px;
+   font-weight: bold;
+}
+
+.businessInfoTab{
+   /* width: 100%; */
+   height: 920px;
+   font-size: 13px;
+   font-weight: bold;
+}
+
+.editBusinessBtn{
+   border: none; /* Remove borders */
+    color: white; /* Add a text color */
+    padding: 18px 110px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+}
+.addressPopup{
+   border: none; /* Remove borders */
+    color: white; /* Add a text color */
+    padding: 6px 20px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on mouse-over */
+}
+.timeSelectClass{
+   width: 80px;
+}
+
+#address1{
+   width: 275px;
+}
+#address2{
+   width: 174px;
+}
+
+.leftCover{
+   position:absolute;
+   background-color: black;
+   opacity: 0.8;
+   width: 100%;
+   height: 100%;
+}
+.leftCover p{
+   position: absolute;
+   top:300px;
+   font-size: 22px;
+   left: 30px;
+}
+.rightCover{
+   position:absolute;
+   background-color: black;
+   opacity: 0.8;
+   width: 100%;
+   height: 100%;
+}
+.rightCover p{
+   position: absolute;
+   top:300px;
+   font-size: 22px;
+   left: 100px;
+}
+.leftCover:hover{opacity: 0.95; color: white;}
+.rightCover:hover{opacity: 0.95; color: white;}
+.addressPopup {background-color: #DC143C;} 
+.addressPopup:hover {background-color: #8B0000;}
+
+.editBusinessBtn {background-color: #DC143C;} 
+.editBusinessBtn:hover {background-color: #8B0000;}
+
+.smallBtn {
+   background-color: #DC143C;
+   color: white;
+   border: none;
+   margin: 2px;
+   padding: 5px;
+   padding-left: 29.5px;
+   padding-right: 29.5px;
+   
+}
+
+
+
+.smallBtn:hover {
+   background-color: #8B0000;
+}
+
+
+.modal {
+   max-width: 100% !important;
+   width: auto !important;
+}
+
+.addBusinessDiv div {
+   padding: 0px;
+   margin: 10px;
+}
+
+.editBusinessDiv div {
+   padding: 0px;
+   margin: 10px;

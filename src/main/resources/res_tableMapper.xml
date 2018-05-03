@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.security.gurume365.mapper.Res_tableMapper">
+	<insert id="insertResTable" parameterType="Res_table">
+		insert into res_table (
+			table_no
+			,person_table
+			,seq_res
+			)values(
+			#{tableNo}
+			,#{personTable}
+			,(select MAX(seq_res) from reservations)			
+			)
+	</insert>
+	
+	<select id="resTableList" parameterType="int" resultType="Res_table">
+		select * from res_table where seq_res = #{seqRes}
+	</select>
+</mapper>

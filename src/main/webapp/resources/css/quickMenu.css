@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+#floatdiv{
+	position: fixed; _position:absolute; _z-index:-1;
+	width:170px;
+	overflow:hidden;
+	left: 0px;
+	top: 60px;
+	background-color: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+#floatdiv ul{
+	list-style: none;
+}
+
+#floatdiv li{
+	margin-bottom: 2px; text-align: center;
+}
+
+#floatdiv a{
+	color: #5D5D5D; border: 0; text-decoration: none; display: block;
+}
+
+#floatdiv a:hover,#floatdiv .menu {background-color: #5D5D5D; color: #fff}
+
+#floatdiv .menu, #floatdiv .last {margin-bottom: 0px;}
+
+#STATICMENU{
+	margin: 0pt;
+	padding: 0pt;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+.menuMain{
+	background-color: white;
+	opacity: 0.8;
+	
+}
+div{
+	
+	
+}

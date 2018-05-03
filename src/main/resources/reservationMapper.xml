@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.security.gurume365.mapper.ReservationMapper">
+	<resultMap type="HashMap" id="resMap">
+		<id javaType="int" property="seqRes" column="seq_res"></id>
+		<result javaType="java.lang.String" property="CompanyName" column="company_name"></result>
+		<collection property="resInfo" javaType="Reservations" resultMap="resInfo"></collection>
+		
+	</resultMap>
+	
+	<resultMap type="Reservations" id="resInfo">
+		<id javaType="int" property="seqRes" column="seq_res"></id>
+		<result javaType="java.lang.String" property="id" column="id"></result>
+		<result javaType="int" property="shopNo" column="shop_no"></result>
+		<result javaType="int" property="floorNo" column="floor_no"></result>
+		<result javaType="java.lang.String" property="datetime" column="datetime"></result>
+		<result javaType="int" property="person" column="person"></result>
+		<result javaType="java.lang.String" property="content" column="content"></result>
+		
+	</resultMap>
+	
+	
+	<insert id="insertReservation" parameterType="reservations">
+		insert into reservations(
+			id
+			,shop_no
+			,floor_no
+			,datetime
+			,person
+			,content
+		)values(
+			#{id}
+			,#{shopNo}
+			,#{floorNo}
+			,#{datetime}
+			,#{person}
+			,#{content}
+		)
+	</insert>
+	
+	<select id="getReservation" parameterType="int" resultType="reservations">
+		select * from reservations where seq_res = #{seqRes}
+	</select>
+	
+	<delete id="noshowChange" parameterType="reservations">
+		delete from reservations where seq_res = #{seqRes}
+	</delete>
+	
+	<insert id="noshowChange2" parameterType="reservations">
+		insert into reservations(
+			id
+			,shop_no
+			,floor_no
+			,datetime
+			,person
+			,seq_res
+			,content
+		)values(
+			#{id}
+			,#{shopNo}
+			,#{floorNo}
+			,#{datetime}
+			,#{person}
+			,#{seqRes}
+			,#{content}
+		) 
+	</insert>
+	<select id="storeReservation" parameterType="int" resultType="reservations">
+		select * from reservations where shop_no = #{shopNo}
+	</select>
+	
+	<select id="getMyResList" parameterType="String" resultMap="resMap">
+		select r.id, r.shop_no, r.floor_no, r.datetime, r.person, r.content, r.seq_res, s.company_name
+		from reservations r, store s
+		where r.shop_no = s.shop_no and r.id = #{id}
+		order by seq_res asc
+	</select>
+		<update id="resSetNoshow" parameterType="int">
+		update
+			reservations
+		set
+			situation = 2
+		where
+			seq_res = #{seqRes}
+	</update>
+	<update id="resSetVisit" parameterType="int">
+		update
+			reservations
+		set
+			situation = 3
+		where
+			seq_res = #{seqRes}
+	</update>
+</mapper>
